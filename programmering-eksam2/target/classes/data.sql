@@ -12,9 +12,10 @@ CREATE TABLE IF NOT EXISTS Students(
                                        first_name VARCHAR(200),
                                        last_name VARCHAR(200),
                                        email VARCHAR(200),
-                                       FKCP553SRQVB5AHYQ6EBW357R2 INT NOT null,
-                                       PRIMARY KEY (id),
-                                       FOREIGN KEY (FKCP553SRQVB5AHYQ6EBW357R2) REFERENCES Supervisors(id));
+                                       supervisor_id INT NOT null,
+                                       PRIMARY KEY (id));
+                                       ALTER TABLE Students ADD FOREIGN KEY (supervisor_id) references Supervisors(id);
+
 CREATE TABLE IF NOT EXISTS Supervisors(
                                        id INT(100) NOT NULL auto_increment,
                                        first_name VARCHAR(200),
@@ -22,7 +23,7 @@ CREATE TABLE IF NOT EXISTS Supervisors(
                                        email VARCHAR(200),
                                        PRIMARY KEY (id));
 
-INSERT INTO Students(id,first_name,last_name,email, FKCP553SRQVB5AHYQ6EBW357R2)
+INSERT INTO Students(id,first_name,last_name,email, supervisor_id)
 VALUES (1,'Layla', 'Fenster','layl2014@stud.kea.dk',1),
        (2,'Noah','Jackson','noah0149@stud.kea.dk',1),
        (3,'Hugh','Jass','hugh@stud.kea.dk',1),

@@ -13,8 +13,10 @@ CREATE TABLE IF NOT EXISTS Students(
                                        last_name VARCHAR(200),
                                        email VARCHAR(200),
                                        supervisor_id INT NOT null,
-                                       PRIMARY KEY (id),
-                                       FOREIGN KEY (supervisor_id) REFERENCES Supervisors(id));
+                                       PRIMARY KEY (id));
+                                       -- ALTER TABLE Students ADD FOREIGN KEY (supervisor_id) references Supervisors(id);
+                                       -- FOREIGN KEY (supervisor_id) REFERENCES Supervisors(id));
+
 CREATE TABLE IF NOT EXISTS Supervisors(
                                        id INT(100) NOT NULL auto_increment,
                                        first_name VARCHAR(200),
