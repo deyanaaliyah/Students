@@ -25,7 +25,7 @@ public class HomeController {
         return iStudentRepository.findAll();
     }
 
-    //Read by id
+    //Read student by id
     @GetMapping("/students/{id}")
     public ResponseEntity<Optional<Student>> findById(@PathVariable Long id){
         Optional<Student> response = iStudentRepository.findById(id);
@@ -36,12 +36,8 @@ public class HomeController {
         }
     }
 
-
-
-
     //delete by id
-
-    @DeleteMapping("/deleteStudent/{id}")
+    @DeleteMapping("/students/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id){
         iStudentRepository.deleteById(id);
         return ResponseEntity.status(200).body("{'msg' : 'deleted'}");
