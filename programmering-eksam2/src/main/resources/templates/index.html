@@ -26,8 +26,8 @@
             <td th:text="${s.email}"></td>
             <td th:text="${s.supervisor}"></td>
             <td>
-                <a th:href="@{/edit/{id}(id=${s.id})}" class="btn btn-success btn-sm" role="button">Update</a>
-                <a th:href="@{/delete/{id}(id=${s.id})}" class="btn btn-danger btn-sm" role="button">Delete</a>
+                <a th:href="@{/edit-student/{id}(id=${s.id})}" class="btn btn-success btn-sm" role="button">Update</a>
+                <a th:href="@{/delete-student/{id}(id=${s.id})}" class="btn btn-danger btn-sm" role="button">Delete</a>
             </td>
         </tr>
     </table>
