@@ -19,7 +19,6 @@ public class Supervisor {
     private List<Student> studentList;
 
     //Getter
-
     public Long getId() {
         return id;
     }

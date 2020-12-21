@@ -1,5 +1,5 @@
 -- TABLES/DATA TO BE ADDED
-CREATE TABLE IF NOT EXISTS Customers (
+CREATE TABLE IF NOT EXISTS Test (
                                          id INT(100) NOT NULL auto_increment,
                                          car_type VARCHAR(200),
                                          first_name VARCHAR(200),
