@@ -11,11 +11,14 @@ public class Supervisor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "supervisor_first_name")
     private String firstName;
+    @Column(name = "supervisor_last_name")
     private String lastName;
+    @Column(name = "supervisor_email")
     private String email;
 
-    @OneToMany(mappedBy = "supervisor")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="supervisor")
     private List<Student> studentList;
 
     //Getter

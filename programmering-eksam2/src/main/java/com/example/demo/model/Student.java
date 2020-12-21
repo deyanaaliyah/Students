@@ -10,12 +10,15 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //
+    @Column(name="student_first_name")
     private String firstName;
+    @Column(name="student_last_name")
     private String lastName;
+    @Column(name="student_email")
     private String email;
 
     @ManyToOne
+    @JoinColumn(name ="supervisor_id")
     private Supervisor supervisor;
 
     //Getter
