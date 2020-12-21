@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Programming 2 Exam</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<body class="container">
 
-<body>
-
-<h2 style="margin: 2% 0 0 2%;"> Add Student</h2>
-
-<form style=" margin: 2% 0 2% 5%;">
+<h2>Add Student</h2>
+<form action="#" th:action="@{/create-student}" method="POST" th:object="${studentToBeInserted}">
+    First name<br/>
+    <input type="text" class="form-control" id="firstName" th:field="*{firstName}" placeholder="First name..."/>
+    <br/>
+    Last name<br/>
+    <input type="text" class="form-control" id="lastName" th:field="*{lastName}"  placeholder="Last name..."/>
+    <br/>
+    Email<br/>
+    <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Email..."/>
+    <br/>
     <div class="form-group">
-        <div class="form-group col-md-6 mb-3">
-            <label id="fName" for="fName">First name</label>
-            <input type="text" class="form-control" placeholder="Please insert first name" required>
-
-            <label id="lName" for="lName">Last name</label>
-            <input type="text" class="form-control" placeholder="Please insert last name" required>
-
-            <label for="regEmail">E-mail</label>
-            <input type="email" class="form-control" id="regEmail" placeholder="Please insert email">
-            <div class="form-group">
-                <label id="dropdown" for="dropdown">Supervisor</label>
-                <select id="select" class="form-control" required>
-                    <option th:each="supervisor : ${selectSupervisor}"  th:text="${supervisor.firstName}" th:value="${supervisor.id}"></option>
-                </select>
-            </div>
-
-
-        </div>
-
-
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+        <label id="dropdown" for="dropdown">Supervisor</label>
+        <select id="select" class="form-control" required>
+            <option th:each="supervisor : ${selectSupervisor}"  th:text="${supervisor.firstName}" th:value="${supervisor}"></option>
+        </select>
     </div>
+    <input type="hidden" id="id" th:field="*{id}">
+    <br/>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="reset" class="btn btn-danger">Reset</button>
+    <br>
 </form>
+
+
 </body>
-
-
 </html>
