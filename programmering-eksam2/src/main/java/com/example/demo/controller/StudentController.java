@@ -24,17 +24,6 @@ public class StudentController {
         return "index";
     }
 
-
-    @GetMapping("/delete-student/{id}")
-    private String deleteStudent(@PathVariable("id") Long id){
-
-        Optional<Student> student = iStudentRepository.findById(id);
-
-        iStudentRepository.deleteById(student.get().getId());
-
-        return "successful";
-    }
-
     //Create student
     @GetMapping("/student")
     public String createStudent(Model model){
@@ -43,10 +32,21 @@ public class StudentController {
         return "create-student";
     }
 
-    //Save the created student
+    //Saves the created student
     @PostMapping("/student")
     public String createdStudent(@ModelAttribute Student newStudent){
         iStudentRepository.save(newStudent);
+        return "successful";
+    }
+
+    //Deletes student by id
+    @GetMapping("/delete-student/{id}")
+    private String deleteStudent(@PathVariable("id") Long id){
+
+        Optional<Student> student = iStudentRepository.findById(id);
+
+        iStudentRepository.deleteById(student.get().getId());
+
         return "successful";
     }
 }
