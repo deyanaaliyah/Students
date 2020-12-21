@@ -68,8 +68,8 @@ public class Student {
         this.email = email;
     }
 
-    public Supervisor getSupervisor() {
-        return supervisor;
+    public Long getSupervisor() {
+        return supervisor.getId();
     }
 
     public void setSupervisor(Supervisor supervisor) {

@@ -19,4 +19,3 @@ VALUES (1,'Layla', 'Fenster','layl2014@stud.kea.dk',1),
        (6,'Cardi','Offset','bardi2049@stud.kea.dk',9),
        (7,'Nicki','Minaj','nicki4452@stud.kea.dk',9),
        (8,'Douglas','Jew','doug2090@stud.kea.dk',9);
-
