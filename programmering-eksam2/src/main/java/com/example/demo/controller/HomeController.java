@@ -19,8 +19,8 @@ public class HomeController {
 
     //Create student
     @PostMapping("/students")
-    public  ResponseEntity<String> create(@ModelAttribute Student s){
-        Student student = iStudentRepository.save(s);
+    public  ResponseEntity<String> create(@ModelAttribute Student studentToCreate){
+        Student student = iStudentRepository.save(studentToCreate);
         return  ResponseEntity.status(201).header("Location","/students/" + student.getId()).body("{'Msg': 'student created'}");
     }
 
