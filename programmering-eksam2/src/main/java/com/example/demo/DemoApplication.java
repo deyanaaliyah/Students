@@ -12,6 +12,7 @@ DemoApplication {
         // Motest
 
         System.out.println("Wakanda forever");
+        System.out.println("tak for kaffe mo");
     }
 
 }
