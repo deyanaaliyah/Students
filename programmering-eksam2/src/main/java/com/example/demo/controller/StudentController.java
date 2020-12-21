@@ -25,7 +25,7 @@ public class StudentController {
     }
 
     //Create student
-    @GetMapping("/student")
+    @GetMapping("/create-student")
     public String createStudent(Model model){
         Student student = new Student();
         model.addAttribute("newStudent", student);
@@ -33,7 +33,7 @@ public class StudentController {
     }
 
     //Saves the created student
-    @PostMapping("/student")
+    @PostMapping("/create-student")
     public String createdStudent(@ModelAttribute Student newStudent){
         iStudentRepository.save(newStudent);
         return "successful";
