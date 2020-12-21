@@ -12,7 +12,6 @@
     <h3>This website reads data of students and supervisors from a H2 database</h3>
     <table class="table table-bordered">
         <tr>
-            <th>ID</th>
             <th>First name</th>
             <th>Last name</th>
             <th>Email</th>
@@ -20,7 +19,6 @@
             <th></th>
         </tr>
         <tr th:each="s : ${studentsToReturn}">
-            <td th:text="${s.id}"></td>
             <td th:text="${s.firstName}"></td>
             <td th:text="${s.lastName}"></td>
             <td th:text="${s.email}"></td>
