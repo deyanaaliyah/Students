@@ -1,8 +1,5 @@
 package com.example.demo.model;
 
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-import org.hibernate.property.access.spi.Getter;
-
 import javax.persistence.*;
 
 @Entity
