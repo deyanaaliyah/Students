@@ -44,6 +44,7 @@ public class StudentController {
     @GetMapping("/edit-student/{id}")
     public String editStudent(@PathVariable("id") Long id, Model model){
         Optional<Student> student = iStudentRepository.findById(id);
+        model.addAttribute("selectSupervisor", iSupervisorRepository.findAll());
         model.addAttribute("studentToBeUpdated",iStudentRepository.findById(id));
 
         return "edit-student";
