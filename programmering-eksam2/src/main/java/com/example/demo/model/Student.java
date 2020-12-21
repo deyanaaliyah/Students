@@ -25,6 +25,7 @@ public class Student {
     @JoinColumn(name = "supervisor_id")
     private Supervisor supervisor;
 
+
     /*public Student() {
     }
     public Student(String firstName,String lastName,String email, Supervisor supervisor) {

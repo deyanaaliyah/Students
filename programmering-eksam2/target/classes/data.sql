@@ -20,14 +20,3 @@ VALUES (1,'Layla', 'Fenster','layl2014@stud.kea.dk',1),
        (7,'Nicki','Minaj','nicki4452@stud.kea.dk',9),
        (8,'Douglas','Jew','doug2090@stud.kea.dk',9);
 
-UPDATE Students SET supervisor_id = (SELECT supervisor_first_name FROM Supervisors WHERE id = '1') WHERE supervisor_id = '1';
-UPDATE Students SET supervisor_id = (SELECT supervisor_first_name FROM Supervisors WHERE id = '2') WHERE supervisor_id = '2';
-UPDATE Students SET supervisor_id = (SELECT supervisor_first_name FROM Supervisors WHERE id = '3') WHERE supervisor_id = '3';
-UPDATE Students SET supervisor_id = (SELECT supervisor_first_name FROM Supervisors WHERE id = '4') WHERE supervisor_id = '4';
-UPDATE Students SET supervisor_id = (SELECT supervisor_first_name FROM Supervisors WHERE id = '5') WHERE supervisor_id = '5';
-UPDATE Students SET supervisor_id = (SELECT supervisor_first_name FROM Supervisors WHERE id = '6') WHERE supervisor_id = '6';
-UPDATE Students SET supervisor_id = (SELECT supervisor_first_name FROM Supervisors WHERE id = '7') WHERE supervisor_id = '7';
-UPDATE Students SET supervisor_id = (SELECT supervisor_first_name FROM Supervisors WHERE id = '8') WHERE supervisor_id = '8';
-UPDATE Students SET supervisor_id = (SELECT supervisor_first_name FROM Supervisors WHERE id = '9') WHERE supervisor_id = '9';
-UPDATE Students SET supervisor_id = (SELECT supervisor_first_name FROM Supervisors WHERE id = '10') WHERE supervisor_id = '10';
-UPDATE Students SET supervisor_id = (SELECT supervisor_first_name FROM Supervisors WHERE id = '11') WHERE supervisor_id = '11';

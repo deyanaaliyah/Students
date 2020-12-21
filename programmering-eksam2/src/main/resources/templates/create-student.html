@@ -20,9 +20,12 @@
     <br/>
     <div class="form-group">
         <label id="dropdown" for="dropdown">Supervisor</label>
-        <select id="select" class="form-control" required>
-            <option th:each="supervisor : ${selectSupervisor}"  th:text="${supervisor.firstName}" th:value="${supervisor}"></option>
+
+
+        <select id="select" class="form-control" th:field="*{supervisor}" required>
+            <option th:each="supervisor : ${selectSupervisor}" th:text="${supervisor.firstName}" th:value="${supervisor.id}"></option>
         </select>
+
     </div>
     <input type="hidden" id="id" th:field="*{id}">
     <br/>
