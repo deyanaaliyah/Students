@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -24,11 +24,7 @@
             <div class="form-group">
                 <label id="dropdown" for="dropdown">Supervisor</label>
                 <select id="select" class="form-control" required>
-
-                    <option value="1" class="option">Supervisor</option>
-                    <option value="2" class="option">Supervisor</option>
-                    <option value="3" class="option">Supervisor</option>
-                    <option value="3" class="option">Supervisor</option>
+                    <option th:each="supervisor : ${selectSupervisor}"  th:text="${supervisor.firstName}" th:value="${supervisor.id}"></option>
                 </select>
             </div>
 

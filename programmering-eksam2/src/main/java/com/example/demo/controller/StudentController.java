@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Student;
 import com.example.demo.repository.IStudentRepository;
+import com.example.demo.repository.ISupervisorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,8 @@ public class StudentController {
 
     @Autowired
     private IStudentRepository iStudentRepository;
+    @Autowired
+    private ISupervisorRepository iSupervisorRepository;
 
     @GetMapping("/")
     public String index(Model model){
@@ -29,6 +32,7 @@ public class StudentController {
     public String createStudent(Model model){
         Student student = new Student();
         model.addAttribute("newStudent", student);
+        model.addAttribute("selectSupervisor", iSupervisorRepository.findAll());
         return "create-student";
     }
 
