@@ -47,6 +47,6 @@ public class StudentController {
     @PostMapping("/student")
     public String createdStudent(@ModelAttribute Student newStudent){
         iStudentRepository.save(newStudent);
-        return "index";
+        return "successful";
     }
 }
