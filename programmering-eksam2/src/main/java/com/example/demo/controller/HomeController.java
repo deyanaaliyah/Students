@@ -2,9 +2,13 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Student;
 import com.example.demo.repository.IStudentRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Optional;
 
 @RestController
 public class HomeController {
@@ -18,5 +22,16 @@ public class HomeController {
     @GetMapping("/students")
     public Iterable<Student> index(){
         return iStudentRepository.findAll();
+    }
+
+    //Read by id
+    @GetMapping("/students/{id}")
+    public ResponseEntity<Optional<Student>> findById(@PathVariable Long id){
+        Optional<Student> response = iStudentRepository.findById(id);
+        if(response.isPresent()){
+            return ResponseEntity.status(200).body(response);
+        }else{
+            return ResponseEntity.status(404).body(response);
+        }
     }
 }
