@@ -17,6 +17,14 @@ public class HomeController {
         this.iStudentRepository = iStudentRepository;
     }
 
+    //Create student
+    @PostMapping("/students")
+    public  ResponseEntity<String> create(@ModelAttribute Student s){
+        Student student = iStudentRepository.save(s);
+        return  ResponseEntity.status(201).header("Location","/students/" + student.getId()).body("{'Msg': 'student created'}");
+    }
+
+    //Read all students
     @GetMapping("/students")
     public Iterable<Student> index(){
         return iStudentRepository.findAll();
@@ -40,6 +48,7 @@ public class HomeController {
         return ResponseEntity.status(200).body("{'msg' : 'deleted'}");
     }
 
+    //Update students
     @PutMapping("/students")
     public ResponseEntity<String> update(@ModelAttribute Student studentToUpdate){
         iStudentRepository.save(studentToUpdate);
