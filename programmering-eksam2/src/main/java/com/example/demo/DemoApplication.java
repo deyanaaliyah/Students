@@ -9,10 +9,7 @@ DemoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
-        // Motest
-
-        System.out.println("Wakanda forever");
-        System.out.println("tak for kaffe mo");
+        
     }
 
 }
