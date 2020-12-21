@@ -4,10 +4,7 @@ import com.example.demo.model.Student;
 import com.example.demo.repository.IStudentRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -41,5 +38,11 @@ public class HomeController {
     public ResponseEntity<String> delete(@PathVariable Long id){
         iStudentRepository.deleteById(id);
         return ResponseEntity.status(200).body("{'msg' : 'deleted'}");
+    }
+
+    @PutMapping("/students")
+    public ResponseEntity<String> update(@ModelAttribute Student studentToUpdate){
+        iStudentRepository.save(studentToUpdate);
+        return ResponseEntity.status(204).body("{'msg':'Hello'}");
     }
 }

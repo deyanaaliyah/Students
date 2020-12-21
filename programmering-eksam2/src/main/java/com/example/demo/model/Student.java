@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @JsonIgnoreProperties({"supervisor","id"})
 @Entity
-@Table(name="Students")
+@Table(name = "Students")
 public class Student {
 
     @Id
@@ -19,6 +19,7 @@ public class Student {
     private String lastName;
     @Column(name="student_email")
     private String email;
+
 
     @ManyToOne
     @JoinColumn(name ="supervisor_id")
@@ -46,7 +47,6 @@ public class Student {
     }
 
     //Setter
-
     public void setId(Long id) {
         this.id = id;
     }
