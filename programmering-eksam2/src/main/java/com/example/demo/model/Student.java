@@ -1,7 +1,10 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
+@JsonIgnoreProperties({"supervisor","id"})
 @Entity
 @Table(name="Students")
 public class Student {
