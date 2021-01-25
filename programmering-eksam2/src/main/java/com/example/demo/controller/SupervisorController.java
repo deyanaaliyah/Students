@@ -18,3 +18,5 @@ public class SupervisorController {
         return "supervisors";
     }
 }
+
+//den virker
