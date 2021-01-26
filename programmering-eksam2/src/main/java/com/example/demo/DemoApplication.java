@@ -12,5 +12,6 @@ DemoApplication {
 
 
         //test virker
+        //og den er endda rigtig god :)
     }
 }
