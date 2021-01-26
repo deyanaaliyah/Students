@@ -21,6 +21,14 @@ public class Supervisor {
     @OneToMany(cascade = CascadeType.ALL, mappedBy="supervisor")
     private List<Student> studentList;
 
+
+    public Supervisor(Long id, String firstName, String lastName, String email) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+
     //Getter
     public Long getId() {
         return id;
@@ -36,10 +44,6 @@ public class Supervisor {
 
     public String getEmail() {
         return email;
-    }
-
-    public List<Student> getStudentList() {
-        return studentList;
     }
 
     //Setter
@@ -61,5 +65,19 @@ public class Supervisor {
 
     public void setStudentList(List<Student> studentList) {
         this.studentList = studentList;
+    }
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    @Override
+    public String toString() {
+        return "Supervisor{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
