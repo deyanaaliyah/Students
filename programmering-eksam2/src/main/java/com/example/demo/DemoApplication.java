@@ -11,7 +11,6 @@ DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
 
 
-        //test virker
-        //og den er endda rigtig god :)
+        // ariana grande
     }
 }
